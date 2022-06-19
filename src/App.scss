@@ -1,0 +1,11 @@
+@use '../node_modules/normalize.css/normalize.css';
+@use './styles/fonts';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+}
