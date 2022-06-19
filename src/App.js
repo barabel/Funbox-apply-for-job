@@ -1,10 +1,12 @@
 import './App.scss';
+import Sale from './components/sale';
+import data from './data/app.json'
 
 function App() {
   return (
-    <div>
-      Hello
-    </div>
+    <main>
+      <Sale {...data.sale}/>
+    </main>
   );
 }
 
