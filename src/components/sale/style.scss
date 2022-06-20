@@ -1,0 +1,50 @@
+@use '../../styles/base';
+
+.sale {
+  padding: 36px 80px 67px;
+  background-image: url('../../../public/assets/images/background.jpg'), linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%);;
+
+  &__heading {
+    margin: 0 0 24px;
+    text-align: center;
+    font-family: 'Exo 2';
+    font-weight: 100;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFF;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0 -40px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0 40px;
+  }
+
+  &__card {
+    margin: 0 0 14px;
+  }
+
+  &__call-to-action {
+    text-align: center;
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFF;
+  }
+
+  &__call-to-action-action {
+    margin: 0 0 0 5px;
+    color: #1698D9;
+    cursor: pointer;
+
+    & > b {
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 1px;
+    }
+  }
+}
