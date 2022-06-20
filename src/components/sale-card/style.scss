@@ -1,15 +1,31 @@
-.sale-card {
-  padding: 4px;
-  background-color: #1698D9;
-  border-radius: 12px;
-  clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
-  cursor: pointer;
+@use '../../styles/variables';
 
-  &__wrapper {
+$parent: 'sale-card';
+
+.#{$parent} {
+  &__card {
+    margin: 0 0 14px;
+    padding: 4px;
+    background-color: #1698D9;
+    border-radius: 12px;
+    clip-path: polygon(43px 0, 100% 0, 100% 100%, 0 100%, 0 43px);
+    cursor: pointer;
+    transition: background-color variables.$transition;
+
+    &:hover {
+      background-color: #2EA8E6;
+
+      .#{$parent}__mass {
+        background-color: #2EA8E6;
+      }
+    }
+  }
+
+  &__content {
     position: relative;
     width: 312px;
     height: 472px;
-    padding: 17px 47px 0;
+    padding: 17px 47px;
     border-radius: 12px;
     background-color: #F2F2F2;
     clip-path: polygon(41px 0, 100% 0, 100% 100%, 0 100%, 0 41px);
@@ -29,6 +45,8 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__under-title {
@@ -65,13 +83,15 @@
     right: 12px;
     width: 80px;
     height: 80px;
-    padding: 20px 0 0;
+    padding: 20px 10px 10px;
     border-radius: 50%;
     background-color: #1698D9;
     text-align: center;
     font-weight: 400;
     font-size: 42px;
     line-height: 22px;
+    overflow: hidden;
+    transition: background-color variables.$transition;
   }
 
   &__mass-value {
@@ -82,5 +102,105 @@
   &__mass-units {
     font-size: 21px;
     color: #FFF;
+  }
+
+  &__call-to-action {
+    text-align: center;
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFF;
+  }
+
+  &__call-to-action-action {
+    margin: 0 0 0 5px;
+    color: #1698D9;
+    cursor: pointer;
+
+    & > b {
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 1px;
+      transition: color variables.$transition;
+    }
+
+    &:hover {
+      & > b {
+        color: #2EA8E6;
+      }
+    }
+  }
+
+  &--selected {
+    .#{$parent}__card {
+      background-color: #D91667;
+
+      &:hover {
+        background-color: #E52E7A;
+
+        .#{$parent}__above-title {
+          color: #E52E7A;
+        }
+
+        .#{$parent}__mass {
+          background-color: #E52E7A;
+        }
+      }
+    }
+
+    .#{$parent}__above-title {
+      transition: color variables.$transition;
+    }
+
+    .#{$parent}__mass {
+      background-color: #D91667;
+    }
+
+    .#{$parent}__call-to-action-action {
+      color: #D91667;
+
+      &:hover {
+        & > b {
+          color: #E52E7A;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    .#{$parent}__card {
+      background-color: #B3B3B3;
+    }
+
+    .#{$parent}__content {
+      color: #B3B3B3;
+
+      .#{$parent}__mass {
+        background-color: #B3B3B3;
+      }
+    }
+
+    .#{$parent}__above-title,
+    .#{$parent}__title,
+    .#{$parent}__under-title,
+    .#{$parent}__description,
+    .#{$parent}__image {
+      opacity: 0.5;
+    }
+
+    .#{$parent}__point {
+      color: #B3B3B3;
+    }
+
+    .#{$parent}__call-to-action{
+      color: #FFFF66;
+
+      .#{$parent}__call-to-action-action {
+        color: #FFFF66;
+
+        & > b {
+          color: #FFFF66;
+        }
+      }
+    }
   }
 }

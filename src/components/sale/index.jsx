@@ -15,13 +15,7 @@ const Sale = ({
           {cards.map((card, index) => {
             return (
               <li key={`card-${index}`} className='sale__item'>
-                <SaleCard className={'sale__card'} {...card} />
-                {card.callToAction && (
-                  <div className='sale__call-to-action'>
-                    {typeof card.callToAction.text === 'string' && <span className='sale__call-to-action-text'>{card.callToAction.text}</span>}
-                    {typeof card.callToAction.action === 'string' && <span className='sale__call-to-action-action'><b>{card.callToAction.action}</b>.</span>}
-                  </div>
-                )}
+                <SaleCard {...card} />
               </li>
             );
           })}
