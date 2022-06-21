@@ -8,19 +8,21 @@ const Sale = ({
   cards
 }) => {
   return (
-    <section className='sale container'>
-      {typeof heading === 'string' && <h2 className='sale__heading'>{heading}</h2>}
-      {Array.isArray(cards) && (
-        <ul className='sale__list'>
-          {cards.map((card, index) => {
-            return (
-              <li key={`card-${index}`} className='sale__item'>
-                <SaleCard {...card} />
-              </li>
-            );
-          })}
-        </ul>
-      )}
+    <section className='sale'>
+      <div className='sale__container container'>
+        {typeof heading === 'string' && <h2 className='sale__heading'>{heading}</h2>}
+        {Array.isArray(cards) && (
+          <ul className='sale__list'>
+            {cards.map((card, index) => {
+              return (
+                <li key={`card-${index}`} className='sale__item'>
+                  <SaleCard tabindex={`${index}`} {...card} />
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
     </section>
   );
 }

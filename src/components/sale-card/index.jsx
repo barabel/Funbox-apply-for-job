@@ -15,7 +15,8 @@ const SaleCard = ({
   className,
   callToAction,
   isSelected,
-  isDisabled
+  isDisabled,
+  tabindex
 }) => {
   const [selected, setSelected] = useState(isSelected);
   const [noHover, setNoHover] = useState(false);
@@ -129,7 +130,8 @@ export const saleCardPropTypes = {
     })
   }),
   isSelected: PropTypes.bool,
-  isDisabled: PropTypes.bool
+  isDisabled: PropTypes.bool,
+  tabindex: PropTypes.string
 }
 
 SaleCard.propTypes = saleCardPropTypes;
