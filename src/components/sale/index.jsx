@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
-import SaleCard from '../sale-card';
+import SaleCard, { saleCardPropTypes } from '../sale-card';
 
 const Sale = ({
   heading,
@@ -27,21 +27,7 @@ const Sale = ({
 
 Sale.propTypes = {
   heading: PropTypes.string,
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    aboveTitle: PropTypes.string,
-    title: PropTypes.string,
-    underTitle: PropTypes.string,
-    description: PropTypes.arrayOf(PropTypes.string),
-    mass: PropTypes.shape({
-      value: PropTypes.string,
-      units: PropTypes.string
-    }),
-    className: PropTypes.string,
-    callToAction: PropTypes.shape({
-      text: PropTypes.string,
-      action: PropTypes.string
-    })
-  }))
+  cards: PropTypes.arrayOf(PropTypes.shape(saleCardPropTypes))
 }
 
 export default Sale;

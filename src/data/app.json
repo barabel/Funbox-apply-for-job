@@ -4,6 +4,7 @@
     "cards": [
       {
         "aboveTitle": "Сказочное заморское яство",
+        "deselect": "Котэ не одобряет?",
         "title": "Нямушка",
         "underTitle": "с фуа-гра",
         "description": [
@@ -19,12 +20,19 @@
           "alt": "cat"
         },
         "callToAction": {
-          "text": "Чего сидишь? Порадуй котэ,",
-          "action": "купи"
+          "default": {
+            "text": "Чего сидишь? Порадуй котэ,",
+            "action": "купи"
+          },
+          "selected": {
+            "text": "Печень утки разварная с артишоками."
+          }
         }
       },
       {
+        "isSelected": true,
         "aboveTitle": "Сказочное заморское яство",
+        "deselect": "Котэ не одобряет?",
         "title": "Нямушка",
         "underTitle": "с рыбой",
         "description": [
@@ -40,12 +48,19 @@
           "alt": "cat"
         },
         "callToAction": {
-          "text": "Чего сидишь? Порадуй котэ,",
-          "action": "купи"
+          "default": {
+            "text": "Чего сидишь? Порадуй котэ,",
+            "action": "купи"
+          },
+          "selected": {
+            "text": "Головы щучьи с чесноком да свежайшая сёмгушка."
+          }
         }
       },
       {
+        "isDisabled": true,
         "aboveTitle": "Сказочное заморское яство",
+        "deselect": "Котэ не одобряет?",
         "title": "Нямушка",
         "underTitle": "с курой",
         "description": [
@@ -62,8 +77,9 @@
           "alt": "cat"
         },
         "callToAction": {
-          "text": "Чего сидишь? Порадуй котэ,",
-          "action": "купи"
+          "disabled": {
+            "text": "Печалька, с курой закончился."
+          }
         }
       }
     ]
