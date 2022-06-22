@@ -75,7 +75,6 @@ const SaleCard = ({
         onClick={handleClick}
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
-        onKeyDown={handleClick}
       >
         <div className='sale-card__content'>
           {typeof aboveTitle === 'string' && (
