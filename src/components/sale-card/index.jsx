@@ -33,12 +33,18 @@ const SaleCard = ({
       setSelected(true);
     }
 
-    if (!event.target.closest('.sale-card__call-to-action-action')) {
+    if (!event?.target?.closest('.sale-card__call-to-action-action')) {
       setNoHover(true);
     }
 
     setIsDeselect(false);
   }, [isDisabled, selected]);
+
+  const handleKeyDown = useCallback((event) => {
+    if (event.code === 'Space' || event.code === 'Enter') {
+      handleClick();
+    }
+  }, [handleClick]);
 
   const handleMouseLeave = useCallback(() => {
     setNoHover(false);
@@ -63,8 +69,14 @@ const SaleCard = ({
   }, [callToAction, handleClick]);
 
   return (
-    <div className={cn('sale-card', {'sale-card--disabled': isDisabled}, className)}>
-      <div className={cn('sale-card__card', {'sale-card__card--selected': selected, 'sale-card__card--no-hover': noHover})} onClick={handleClick} onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
+    <div className={cn('sale-card', {'sale-card--disabled': isDisabled}, className)} tabIndex={tabindex + 1} onKeyDown={handleKeyDown}>
+      <div
+        className={cn('sale-card__card', {'sale-card__card--selected': selected, 'sale-card__card--no-hover': noHover})}
+        onClick={handleClick}
+        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
+        onKeyDown={handleClick}
+      >
         <div className='sale-card__content'>
           {typeof aboveTitle === 'string' && (
             <div className='sale-card__above-title'>
