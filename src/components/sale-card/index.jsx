@@ -15,8 +15,7 @@ const SaleCard = ({
   className,
   callToAction,
   isSelected,
-  isDisabled,
-  tabindex
+  isDisabled
 }) => {
   const [selected, setSelected] = useState(isSelected);
   const [noHover, setNoHover] = useState(false);
@@ -69,7 +68,7 @@ const SaleCard = ({
   }, [callToAction, handleClick]);
 
   return (
-    <div className={cn('sale-card', {'sale-card--disabled': isDisabled}, className)} tabIndex={tabindex + 1} onKeyDown={handleKeyDown}>
+    <div className={cn('sale-card', {'sale-card--disabled': isDisabled}, className)} tabIndex='0' onKeyDown={handleKeyDown}>
       <div
         className={cn('sale-card__card', {'sale-card__card--selected': selected, 'sale-card__card--no-hover': noHover})}
         onClick={handleClick}
@@ -141,8 +140,7 @@ export const saleCardPropTypes = {
     })
   }),
   isSelected: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  tabindex: PropTypes.number
+  isDisabled: PropTypes.bool
 }
 
 SaleCard.propTypes = saleCardPropTypes;
