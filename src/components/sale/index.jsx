@@ -16,7 +16,7 @@ const Sale = ({
             {cards.map((card, index) => {
               return (
                 <li key={`card-${index}`} className='sale__item'>
-                  <SaleCard tabindex={`${index}`} {...card} />
+                  <SaleCard tabindex={index} {...card} />
                 </li>
               );
             })}

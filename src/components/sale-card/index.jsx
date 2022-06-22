@@ -142,7 +142,7 @@ export const saleCardPropTypes = {
   }),
   isSelected: PropTypes.bool,
   isDisabled: PropTypes.bool,
-  tabindex: PropTypes.string
+  tabindex: PropTypes.number
 }
 
 SaleCard.propTypes = saleCardPropTypes;
